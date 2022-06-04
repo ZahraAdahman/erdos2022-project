@@ -1,84 +1,61 @@
 # erdos2022-project
 
 
+## Project Description
 
-## Project descripsion
+COVID-19 adverse health outcomes such as mortality rate are associated with multiple Demographic, Environmental and Socioeconomic (DES) factors. Precise estimation of the association patterns can help improve the understanding of social and environmental justice issues related to the impact of the pandemic. In this project, we extracted a subset from the COVID-19 socioexposomic data<sup>1</sup> and developed Interpretable Machine Learning<sup>2</sup> (IML) methods to identify important nonlinear health effects and interactions at local (municipality) scale across New Jersey. Our results show that IML can be an effective supplement to traditional statistical and geospatial models for uncovering underlying complex patterns even for small sample sets.
 
-COVID-19 adverse health outcomes such as mortality rate are associated with multiple Demographic, Environmental and Socioeconomic (DES) factors. Precise estimation of the association patterns can help improve the understanding of social and environmental justice issues related to the impact of the pandemic. In this project, we extracted a subset of the COVID-19 socioexposomic data<sup>1</sup> and developed Interpretable Machine Learning (IML) methods to identify important nonlinear health effects and interactions at local (municipality) scale across New Jersey. Our results show that IML can be an effective supplement to traditional statistical and geospatial models for uncovering underlying complex patterns even for small sample sets.
 
 ## Team
+
 We have 4 Ph.Ds from diverse backgrounds as part of the Erdos Institute DataScience Bootcamp - 2022.  
 
-Xiang Ren 
+* Xiang Ren (Process Systems Engineering)
 
-Xiaoran Hao  
+* Xiaoran Hao (Math)
 
-Jun Li  
+* Jun Li (Math)
 
-Zahra Adahman 
-
-## Data challenge (environmental health data)
-Small/moderate sample size (~500)
-strong inter-correlation
-Spatial heterogeneity
-Nonlinear relationships
-Potential interactions
-
-## Document description
+* Zahra Adahman (Neuroscience)
 
 
+## Data Challenge (Environmental Health Data)
 
-## Selected results
+* Small/moderate sample size (~500)<br/>
 
+* Strong inter-correlation<br/>
 
+* Spatial heterogeneity<br/>
 
-## Goal of the project
-We handle COVID-19 Health Risk data in New Jersey. 
-The goal is to use interpretable Machine Learning methods to capture important nonlinear health effects (particularly the complex interactions), and evaluate the consistency with those captured by linear models.
+* Nonlinear relationships<br/>
 
-<img width="482" alt="1654284520(1)" src="https://user-images.githubusercontent.com/50276534/171936157-10c77352-e314-429e-bd9d-c667669156ae.png">
+* Potential interactions<br/>
+<br/>
 
-
-
-
-## Project summary
-
-### The challenge 
-
-1. Determine a set of features of interest for analyses.  We have multiple possible non-linearly interacted features that could affect Covid death rate. 
-2. Figure out the most suitable interpretation tool.
-3. Train interpretable Machine Learning models and compare with commonly used linear models in public health.
-
-### Our approach
-1. Variable selection.  There are linear tools, PCA for example, to select features that are not correlated.  However, our case has non-linear interactions, which is indeed our focus.    Here we use the domain knowledge from health industries.  10 features are selected, and they all affect Covid death rate  (per 100,000 people).
-
-2. We decided Shapley value, better for interpretation, among other quantities.
-
-3. We trained ramdom forest, xgboost models and compare them with Possion and Neg-Binomial BYM models
+![Heatmap](heatmap.png)
 
 
-### Conclusion: 
+## Document Description
+
+Data folder includes raw data and intermediate data used for visualiation; Code folder includes two python scripts and two R scripts:
+
+* machine-learning.py: hyperparameter tuning, validation, prediction and interpretaion of two Machine Learning models, i.e., random forest and extreme gradient boosting<br/>
+
+* shap_plot.py: interaction analysis and visualization for the xgboost model<br/>
+
+* statistical-modeling.R: construction, validation, prediction and interpretaion of two statistical models, i.e., poisson regression and negative-binomial bym spatial model<br/>
+
+* visualization.R: correlation heatmap, effects plots from four modeling approaches, etc.<br/>
 
 
-#### For predictions:
+## Several Results
+TBD
 
 
-<img width="277" alt="1654284599(1)" src="https://user-images.githubusercontent.com/50276534/171936478-ced5e2c6-987a-4179-be4f-e65505309320.png">
-
-ML obtained slightly higher validation accuracy than statistical models.
-
-<img width="245" alt="1654284576(1)" src="https://user-images.githubusercontent.com/50276534/171936365-ca7552dc-4bd9-4b3c-9b83-049cbd4a2bce.png">
+## Final Remark: 
+Interpretable Machine Learning (even for small datasets) played a complementary role to advanced geostatistical models: all four modeling approaches can capture similar associations when an underlying exponential relation holds, but Machine Learning can further “learn” non-exponential patterns in the data.
 
 
-
-#### When it comes to interactions:
-
-<img width="530" alt="1654284678(1)" src="https://user-images.githubusercontent.com/50276534/171936739-2bbc73a7-e569-4afd-b33c-73cbf4268d5f.png">
-
-
-Compare commonly used geostatistical models, ML models capture similar 
-associations  when an underlying exponential 
-relation holds, but ML can further “learn” non-
-exponential patterns and interactions in the data, 
-an issue that is important for precision health and 
-knowledge discovery.
+## Reference:
+1. Georgopoulos, PG., Mi, Z., Ren, X*. Socioexposomics of COVID-19: The Case of New Jersey, ISES 2021</br>
+2. Molnar, C., 2019. Interpretable Machine Learning: A Guide for Making Black Box Models Explainable
