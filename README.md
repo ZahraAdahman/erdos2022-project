@@ -1,4 +1,4 @@
-# Erdős Institute, Member and Data Science Bootcamp, June 2022.
+# Erdős Institute Data Science Bootcamp, June 2022.
 
 ## Project Description
 
