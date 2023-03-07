@@ -1,5 +1,5 @@
 # Erdős Institute Data Science Bootcamp, June 2022.
-
+# CovExper
 ## Project Description
 
 COVID-19 adverse health outcomes such as mortality rate are associated with multiple Demographic, Environmental and Socioeconomic (DES) factors. Precise estimation of association patterns can help improve the understanding of social and environmental justice issues related to the impact of the pandemic. In this project, we extracted a subset from the COVID-19 socioexposomic data<sup>1,2</sup> and developed Interpretable Machine Learning<sup>3</sup> (IML) methods to identify important nonlinear health effects and interactions at local (municipality) scale across New Jersey. Our results show that IML can be an effective supplement to traditional statistical and geospatial models for uncovering underlying complex patterns even for small sample sets.
